@@ -17,6 +17,7 @@ targets:
     type: application
     platform: iOS
     dependencies:
+      - target: Utility
       - carthage: Realm
       - carthage: RealmSwift
     sources:
@@ -34,6 +35,13 @@ targets:
       INFOPLIST_FILE: SampleTests/Info.plist
     sources:
       - SampleTests
+  Utility:
+    type: framework
+    platform: iOS
+    settings:
+      INFOPLIST_FILE: Utility/Info.plist
+    sources:
+      - Utility
 
 # スキーム
 schemes:
