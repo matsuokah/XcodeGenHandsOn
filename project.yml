@@ -18,16 +18,9 @@ targets:
     platform: iOS
     sources:
       - path: Sample
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: matsuokah.Sample
-        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        INFOPLIST_FILE: Sample/Info.plist
-      configs:
-        Debug:
-          GCC_OPTIMIZATION_LEVEL: 0
-        Release:
-          GCC_OPTIMIZATION_LEVEL: s
+    configFiles:
+      Debug: Sample/Debug.xcconfig
+      Release: Sample/Release.xcconfig
   SampleTests:
     type: bundle.unit-test
     platform: iOS
