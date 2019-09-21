@@ -1,0 +1,14 @@
+//
+//  Base.xcconfig
+//  Sample
+//
+//  Created by Hideki Matsuoka on 2019/09/21.
+//  Copyright © 2019 matsuokah. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PRODUCT_BUNDLE_IDENTIFIER = matsuokah.Sample
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+INFOPLIST_FILE = Sample/Info.plist
