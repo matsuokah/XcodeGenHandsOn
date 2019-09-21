@@ -1,0 +1,60 @@
+# プロジェクト構成・設定
+name: Sample
+configs:
+  Debug: debug
+  Release: release
+options:
+  groupSortPosition: top
+attributes:
+  ORGANIZATIONNAME: matsuokah
+fileGroups:
+    - Sample
+    - SampleTests
+
+# ターゲット
+targets:
+  Sample:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sample
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: matsuokah.Sample
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_FILE: Sample/Info.plist
+      configs:
+        Debug:
+          GCC_OPTIMIZATION_LEVEL: 0
+        Release:
+          GCC_OPTIMIZATION_LEVEL: s
+  SampleTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: Sample
+    settings:
+      TEST_HOST: $(BUILT_PRODUCTS_DIR)/Sample.app/Sample
+      INFOPLIST_FILE: SampleTests/Info.plist
+    sources:
+      - SampleTests
+
+# スキーム
+schemes:
+  Sample:
+    build:
+      targets:
+        Sample: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+          - SampleTests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
