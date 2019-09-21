@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // アカウントに紐づくPlistの設定が必要なためコメントアウトしています。
         // Fabric.with([Crashlytics.self])
+        try! Realm()
         return true
     }
 

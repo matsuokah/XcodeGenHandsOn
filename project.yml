@@ -16,6 +16,9 @@ targets:
   Sample:
     type: application
     platform: iOS
+    dependencies:
+      - carthage: Realm
+      - carthage: RealmSwift
     sources:
       - path: Sample
     configFiles:
